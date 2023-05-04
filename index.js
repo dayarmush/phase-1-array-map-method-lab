@@ -18,13 +18,23 @@ const titleCased = () => {
   const theMap = tutorials.map(cases => {
     const words = cases.split(' ')
     const capitalized = words.map( word => {
-      partOne = word.slice(0, 1).toUpperCase();
+      partOne = word[0].toUpperCase();
       partTwo = word.slice(1);
       return partThree = partOne + partTwo;
      })
      return capitalized.join(' ')
   })
-  return console.log(theMap);
+  return theMap;
 }
 
-titleCased()
+
+function titleCased() {
+  return tutorials.map((title) => {
+    const words = title.split(' ')
+    const capWords = words.map((word) => {
+      return word[0].toUpperCase() + word.slice(1)
+    })
+    return capWords.join(' ')
+  })
+}
+
